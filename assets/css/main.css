@@ -502,7 +502,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--default-colorr);
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
@@ -1556,3 +1556,44 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Dark mode overrides
+--------------------------------------------------------------*/
+body.dark-mode {
+  --background-color: #0f1720; /* dark page background */
+  --default-color: #cbd5e1; /* lighter body text */
+  --heading-color: #e6eef6; /* headings */
+  --accent-color: #c19a5a; /* keep brand accent but slightly muted */
+  --surface-color: #111827; /* cards, surfaces */
+  --contrast-color: #0b1220; /* contrast text on accent */
+  --nav-color: rgba(255, 255, 255, 0.85);
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #0b1220;
+  --nav-dropdown-background-color: #0b1220;
+  --nav-dropdown-color: #cbd5e1;
+  --nav-dropdown-hover-color: #c19a5a;
+}
+
+/* Theme toggle specific styles */
+#theme-toggle i {
+  font-size: 18px;
+  transition: transform 0.2s, color 0.2s;
+  color: var(--nav-color);
+}
+
+body.dark-mode #theme-toggle i {
+  color: var(--nav-color);
+  transform: rotate(0deg);
+}
+
+/* Slight background for header when in dark mode to improve contrast */
+body.dark-mode .header {
+  background-color: rgba(6, 8, 15, 0.6);
+}
+
+/* Make the toggle look clickable on hover */
+#theme-toggle:hover i {
+  transform: rotate(-10deg);
+  color: var(--accent-color);
+}
